@@ -14,8 +14,8 @@ void back(double duty);
 void right(double duty);
 void left(double duty);
 
- //PWM'S channel is called ”slice”
- //1
+//PWM'S channel is called ”slice”
+//1
 static pwm_config pwm0_slice_config;//pwm_config is defined in hardware/gpio.h
 static pwm_config pwm1_slice_config;
 //2
@@ -92,8 +92,10 @@ void back(double duty){
 
 void right(double duty){
     pwm_set_gpio_level( PIN_PWM0, ( pwm0_slice_config.top * duty ) );
+    pwm_set_gpio_level( PIN_PWM2, ( pwm2_slice_config.top * 0 ) );
 }
 
 void left(double duty){
+    pwm_set_gpio_level( PIN_PWM0, ( pwm0_slice_config.top * 0 ) );
     pwm_set_gpio_level( PIN_PWM2,( pwm2_slice_config.top * duty ));
 }
