@@ -22,7 +22,6 @@ static pwm_config pwm1_slice_config;
 static pwm_config pwm2_slice_config;//pwm_config is defined in hardware/gpio.h
 static pwm_config pwm3_slice_config;
 void main(void) {
-    //To use USB
     stdio_init_all();
     //1
     gpio_set_function(PIN_PWM0,GPIO_FUNC_PWM);
