@@ -13,7 +13,7 @@ git clone -b master https://github.com/raspberrypi/pico-sdk.git
 git clone -b master https://github.com/raspberrypi/pico-examples.git
 git clone -b master https://github.com/raspberrypi/pico-playground.git
 git clone -b master https://github.com/raspberrypi/pico-extras.git
-
+git clone https://github.com/Akatoki-Saidai/SC-17.git
 sudo apt install -y cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
 
 export PICO_SDK_PATH=~/pico/pico-sdk >> .profile
