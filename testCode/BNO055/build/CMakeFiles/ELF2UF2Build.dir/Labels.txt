@@ -1,0 +1,13 @@
+# Target labels
+ ELF2UF2Build
+# Source files and their labels
+/home/kakacafu/SC-17/testCode/BNO055/BNO055/build/CMakeFiles/ELF2UF2Build
+/home/kakacafu/SC-17/testCode/BNO055/BNO055/build/CMakeFiles/ELF2UF2Build.rule
+/home/kakacafu/SC-17/testCode/BNO055/BNO055/build/CMakeFiles/ELF2UF2Build-complete.rule
+/home/kakacafu/SC-17/testCode/BNO055/BNO055/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule
+/home/kakacafu/SC-17/testCode/BNO055/BNO055/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule
+/home/kakacafu/SC-17/testCode/BNO055/BNO055/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule
+/home/kakacafu/SC-17/testCode/BNO055/BNO055/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install.rule
+/home/kakacafu/SC-17/testCode/BNO055/BNO055/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir.rule
+/home/kakacafu/SC-17/testCode/BNO055/BNO055/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule
+/home/kakacafu/SC-17/testCode/BNO055/BNO055/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule
