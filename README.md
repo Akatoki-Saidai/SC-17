@@ -15,46 +15,46 @@ https://qiita.com/kohga/items/dccf135b0af395f69144
   コンパイル方式とはソースコードをすべて一気に機械語に翻訳して、実行する方式。C/C++などの言語はコンパイル方式で動いている。  
  （注)Javaなどはこれらの中間みたいな感じ。気になったら調べてみて
   
-#CMakeLIstsの書き方
-##Cmakeはなぜ必要?
+# CMakeLIstsの書き方
+## Cmakeはなぜ必要?
 * CMakeはC, C++ などの言語のビルドをコンパイラに依存せず自動化する  
 　コンパイラといっても、複数種類があるため、それらの設定などの使い方を覚えるのは大変ということで、CMakeが使うコンパイラなどの指定をしてあげれば、自動でやってくれる。  
   
 
-###CMakeLists.txt に書かれている内容を実行するのに必要な CMake の最低バージョンを明示する
+### CMakeLists.txt に書かれている内容を実行するのに必要な CMake の最低バージョンを明示する
 cmake_minimum_required(VERSION 3.12)
 
-###ヘッダファイルをたくさん含む、モジュールを取り込む機能
+### ヘッダファイルをたくさん含む、モジュールを取り込む機能
 include(pico_sdk_import.cmake)
 
 
-###プロジェクト名と使用する言語を指定している
+### プロジェクト名と使用する言語を指定している
 project(project1 C CXX ASM)
 
-###使用するCとC++のバージョン指定
+### 使用するCとC++のバージョン指定
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
-
-###モジュールの初期化
+### モジュールの初期化
 pico_sdk_init()
 
-###どのC言語のファイルを実行ファイル(機械語)に翻訳するか指定している。また、翻訳後の実行ファイル名も指定している
+### どのC言語のファイルを実行ファイル(機械語)に翻訳するか指定している。また、翻訳後の実行ファイル名も指定している
 add_executable(test test.c)
 
-###リンクするライブラリを指定している
-#testに,pico_stdlibなどをリンクする指定
+### リンクするライブラリを指定している
+### testに,pico_stdlibなどをリンクする指定
 target_link_libraries(test pico_stdlib hardware_gpio hardware_pwm) 
 
-###マイコンのペリフェラル(処理結果を入出力するポート)を指定している
-###1で有効化、0で無効化
-###printfやcoutなどで出力したものをusbやuartで見ることができる
-###同様に、scanfやcinで入力するのもそのペリフェラルで行われる
+### マイコンのペリフェラル(処理結果を入出力するポート)を指定している
+### 1で有効化、0で無効化
+### printfやcoutなどで出力したものをusbやuartで見ることができる
+### 同様に、scanfやcinで入力するのもそのペリフェラルで行われる
 pico_enable_stdio_usb(test 1)
 pico_enable_stdio_uart(test 0)
 
-###picoの実行ファイルの形式はuf2だから、uf2を出力する指定。()は出力するファイルの名前
+### picoの実行ファイルの形式はuf2だから、uf2を出力する指定。()は出力するファイルの名前
 pico_add_extra_outputs(test)
+
 ## build中に行われていること(下記のプログラムをビルドすることを考える)  
   #include<stdio.h>    
   #define NUMBER 1    
