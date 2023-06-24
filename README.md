@@ -42,7 +42,9 @@ https://qiita.com/kohga/items/dccf135b0af395f69144
     コンパイルとリンクを自動的に制御して実行形式ファイルを生成させる処理。  
 * make  
     ユーザーが意図的にコンパイラリンカを制御して効率的に実行形式ファイルを生成させる処理。     
-このサイトhttps://dev.grapecity.co.jp/support/powernews/column/clang/003/page03.htm　が短くわかりやすく書いています。
+このサイト
+https://dev.grapecity.co.jp/support/powernews/column/clang/003/page03.htm
+が短くわかりやすく書いています。
 # git コマンドの使い方
 1.コマンドラインを開く(検索バーで cmd とうつ)  
 2.git clone https://github.com/Akatoki-Saidai/SC-16.git と入力でフォルダがダウンロードされる  
