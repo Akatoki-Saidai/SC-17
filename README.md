@@ -14,6 +14,7 @@ https://qiita.com/kohga/items/dccf135b0af395f69144
   インタープリター方式とはソースコードを１行ずつ機械語に解釈しながら実行していく方式。Pythonなどの言語はインタープリター方式で動いている。  
   コンパイル方式とはソースコードをすべて一気に機械語に翻訳して、実行する方式。C/C++などの言語はコンパイル方式で動いている。  
  （注)Javaなどはこれらの中間みたいな感じ。気になったら調べてみて
+
   
 # CMakeLIstsの書き方
 ## Cmakeはなぜ必要?
@@ -55,6 +56,7 @@ pico_enable_stdio_uart(test 0)
 ### picoの実行ファイルの形式はuf2だから、uf2を出力する指定。()は出力するファイルの名前
 pico_add_extra_outputs(test)
 
+  
 ## build中に行われていること(下記のプログラムをビルドすることを考える)  
   #include<stdio.h>    
   #define NUMBER 1    
