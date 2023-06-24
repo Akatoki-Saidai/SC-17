@@ -16,12 +16,12 @@ https://qiita.com/kohga/items/dccf135b0af395f69144
  （注)Javaなどはこれらの中間みたいな感じ。気になったら調べてみて  
 
 *　build中に行われていること(下記のプログラムをビルドすることを考える)  
-  #include<stdio.h>　//1行目  
-  #define NUMBER 1  //2行目  
-  int main(void){  //3行目  
-    printf("%d:Hello World!",NUMBER); //4行目  
-    return 0;  //5行目  
-  } //6行目  
+  #include<stdio.h>    
+  #define NUMBER 1    
+  int main(void){  
+    printf("%d:Hello World!",NUMBER);     
+    return 0;  
+  }  
 
   1.プリプロセス  
   　#のついたプログラムを実行すること。  
