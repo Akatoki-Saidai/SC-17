@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/kakacafu/SC-17/testCode/Motor/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/test.dir/all
+all: CMakeFiles/test_dual.dir/all
 all: CMakeFiles/ELF2UF2Build.dir/all
 all: pico-sdk/all
 .PHONY : all
@@ -73,7 +73,7 @@ preinstall: pico-sdk/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/test.dir/clean
+clean: CMakeFiles/test_dual.dir/clean
 clean: CMakeFiles/ELF2UF2Build.dir/clean
 clean: pico-sdk/clean
 .PHONY : clean
@@ -1482,31 +1482,31 @@ pico-sdk/tools/clean:
 .PHONY : pico-sdk/tools/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/test.dir
+# Target rules for target CMakeFiles/test_dual.dir
 
 # All Build rule for target.
-CMakeFiles/test.dir/all: CMakeFiles/ELF2UF2Build.dir/all
-CMakeFiles/test.dir/all: pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kakacafu/SC-17/testCode/Motor/build/CMakeFiles --progress-num=14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59 "Built target test"
-.PHONY : CMakeFiles/test.dir/all
+CMakeFiles/test_dual.dir/all: CMakeFiles/ELF2UF2Build.dir/all
+CMakeFiles/test_dual.dir/all: pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kakacafu/SC-17/testCode/Motor/build/CMakeFiles --progress-num=14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59 "Built target test_dual"
+.PHONY : CMakeFiles/test_dual.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/test.dir/rule: cmake_check_build_system
+CMakeFiles/test_dual.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kakacafu/SC-17/testCode/Motor/build/CMakeFiles 58
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_dual.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kakacafu/SC-17/testCode/Motor/build/CMakeFiles 0
-.PHONY : CMakeFiles/test.dir/rule
+.PHONY : CMakeFiles/test_dual.dir/rule
 
 # Convenience name for target.
-test: CMakeFiles/test.dir/rule
-.PHONY : test
+test_dual: CMakeFiles/test_dual.dir/rule
+.PHONY : test_dual
 
 # clean rule for target.
-CMakeFiles/test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/clean
-.PHONY : CMakeFiles/test.dir/clean
+CMakeFiles/test_dual.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/clean
+.PHONY : CMakeFiles/test_dual.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/ELF2UF2Build.dir

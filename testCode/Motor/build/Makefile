@@ -117,17 +117,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named test_dual
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
-.PHONY : test
+test_dual: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_dual
+.PHONY : test_dual
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+test_dual/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/build
+.PHONY : test_dual/fast
 
 #=============================================================================
 # Target rules for targets named ELF2UF2Build
@@ -186,7 +186,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.obj: home/kaka
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
 
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.i: home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.i
@@ -194,7 +194,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.i: home/kakaca
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.i
 
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.s: home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.s
@@ -202,7 +202,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.s: home/kakaca
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.c.s
 
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.obj: home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
@@ -210,7 +210,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.obj: home/kakacafu/pi
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
 
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.i: home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.i
@@ -218,7 +218,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.i: home/kakacafu/pico
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.i
 
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.s: home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.s
@@ -226,7 +226,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.s: home/kakacafu/pico
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_sync/lock_core.c.s
 
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.obj: home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
@@ -234,7 +234,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.obj: home/kakacafu/pico/p
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
 
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.i: home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.i
@@ -242,7 +242,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.i: home/kakacafu/pico/pic
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.i
 
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.s: home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.s
@@ -250,7 +250,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.s: home/kakacafu/pico/pic
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_sync/mutex.c.s
 
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.obj: home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.obj
@@ -258,7 +258,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.obj: home/kakacafu/pico/pic
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.obj
 
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.i: home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.i
@@ -266,7 +266,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.i: home/kakacafu/pico/pico-
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.i
 
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.s: home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.s
@@ -274,7 +274,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.s: home/kakacafu/pico/pico-
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_sync/sem.c.s
 
 home/kakacafu/pico/pico-sdk/src/common/pico_time/time.obj: home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.obj
@@ -282,7 +282,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_time/time.obj: home/kakacafu/pico/pi
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.obj
 
 home/kakacafu/pico/pico-sdk/src/common/pico_time/time.i: home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.i
@@ -290,7 +290,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_time/time.i: home/kakacafu/pico/pico
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.i
 
 home/kakacafu/pico/pico-sdk/src/common/pico_time/time.s: home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.s
@@ -298,7 +298,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_time/time.s: home/kakacafu/pico/pico
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_time/time.c.s
 
 home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.obj: home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
@@ -306,7 +306,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.obj: home/kakaca
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 
 home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.i: home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.i
@@ -314,7 +314,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.i: home/kakacafu
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.i
 
 home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.s: home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.s
@@ -322,7 +322,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.s: home/kakacafu
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_time/timeout_helper.c.s
 
 home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.obj: home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.obj
@@ -330,7 +330,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.obj: home/kakacafu/pic
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.obj
 
 home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.i: home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.i
@@ -338,7 +338,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.i: home/kakacafu/pico/
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.i
 
 home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.s: home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.s
@@ -346,7 +346,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.s: home/kakacafu/pico/
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_util/datetime.c.s
 
 home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.obj: home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.obj
@@ -354,7 +354,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.obj: home/kakacafu/pico/p
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.obj
 
 home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.i: home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.i
@@ -362,7 +362,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.i: home/kakacafu/pico/pic
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.i
 
 home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.s: home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.s
@@ -370,7 +370,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.s: home/kakacafu/pico/pic
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_util/pheap.c.s
 
 home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.obj: home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.obj
@@ -378,7 +378,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.obj: home/kakacafu/pico/p
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.obj
 
 home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.i: home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.i
@@ -386,7 +386,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.i: home/kakacafu/pico/pic
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.i
 
 home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.s: home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.s
@@ -394,7 +394,7 @@ home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.s: home/kakacafu/pico/pic
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/common/pico_util/queue.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
@@ -402,7 +402,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.obj: home/kakaca
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.i: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
@@ -410,7 +410,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.i: home/kakacafu
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.s: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
@@ -418,7 +418,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.s: home/kakacafu
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
@@ -426,7 +426,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.obj: home/kaka
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.i: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
@@ -434,7 +434,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.i: home/kakaca
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.s: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
@@ -442,7 +442,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.s: home/kakaca
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_divider/divider.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
@@ -450,7 +450,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_divider/divider.obj: home/ka
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
@@ -458,7 +458,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj: home/kakacafu
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.i: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
@@ -466,7 +466,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.i: home/kakacafu/p
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.s: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
@@ -474,7 +474,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.s: home/kakacafu/p
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
@@ -482,7 +482,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.obj: home/kakacafu/p
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.i: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
@@ -490,7 +490,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.i: home/kakacafu/pic
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.s: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
@@ -498,7 +498,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.s: home/kakacafu/pic
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
@@ -506,7 +506,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.obj: h
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
@@ -514,7 +514,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.obj: home/kakacafu/p
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.i: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
@@ -522,7 +522,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.i: home/kakacafu/pic
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.s: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
@@ -530,7 +530,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.s: home/kakacafu/pic
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
@@ -538,7 +538,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.obj: home/kakacafu
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.i: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
@@ -546,7 +546,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.i: home/kakacafu/p
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.s: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
@@ -554,7 +554,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.s: home/kakacafu/p
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
@@ -562,7 +562,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.obj: home/kakaca
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.i: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
@@ -570,7 +570,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.i: home/kakacafu
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.s: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
@@ -578,7 +578,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.s: home/kakacafu
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
@@ -586,7 +586,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.obj: home/kakacafu
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.i: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
@@ -594,7 +594,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.i: home/kakacafu/p
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.s: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
@@ -602,7 +602,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.s: home/kakacafu/p
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
@@ -610,7 +610,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.obj: home/kakacafu
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.i: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
@@ -618,7 +618,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.i: home/kakacafu/p
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.s: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
@@ -626,7 +626,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.s: home/kakacafu/p
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
@@ -634,7 +634,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.obj: home/
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
@@ -642,7 +642,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i: home/ka
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
@@ -650,7 +650,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s: home/ka
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
@@ -658,7 +658,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.obj: home/kakacafu
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.i: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
@@ -666,7 +666,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.i: home/kakacafu/p
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.s: home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
@@ -674,7 +674,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.s: home/kakacafu/p
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
@@ -682,7 +682,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.obj: home/
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
@@ -690,7 +690,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.obj: home/kakaca
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
@@ -698,7 +698,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i: home/kakacafu
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
@@ -706,7 +706,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s: home/kakacafu
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_divider/divider.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
@@ -714,7 +714,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_divider/divider.obj: home/kakaca
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
@@ -722,7 +722,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.obj: home/ka
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
@@ -730,7 +730,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.obj: home
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.i: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
@@ -738,7 +738,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.i: home/k
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.s: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
@@ -746,7 +746,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.s: home/k
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
@@ -754,7 +754,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.obj: home/kak
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.i: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.i
@@ -762,7 +762,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.i: home/kakac
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.s: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.s
@@ -770,7 +770,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.s: home/kakac
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
@@ -778,7 +778,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.obj: h
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
@@ -786,7 +786,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj: home/kaka
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
@@ -794,7 +794,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.obj: home/k
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.i: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
@@ -802,7 +802,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.i: home/kak
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.s: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
@@ -810,7 +810,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.s: home/kak
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
@@ -818,7 +818,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.obj: home/kakac
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.i: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.i
@@ -826,7 +826,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.i: home/kakacaf
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.s: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.s
@@ -834,7 +834,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.s: home/kakacaf
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
@@ -842,7 +842,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.obj: hom
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
@@ -850,7 +850,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.o
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
@@ -858,7 +858,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.obj: home/kak
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
@@ -866,7 +866,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i: home/kakac
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
@@ -874,7 +874,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s: home/kakac
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
@@ -882,7 +882,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj: home/
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
@@ -890,7 +890,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.obj: home/kaka
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.i: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.i
@@ -898,7 +898,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.i: home/kakaca
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.s: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.s
@@ -906,7 +906,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.s: home/kakaca
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
@@ -914,7 +914,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.obj: home/kakacafu
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.i: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.i
@@ -922,7 +922,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.i: home/kakacafu/p
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.s: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.s
@@ -930,7 +930,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.s: home/kakacafu/p
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
@@ -938,7 +938,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.obj: home/kakaca
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.i: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
@@ -946,7 +946,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.i: home/kakacafu
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.s: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
@@ -954,7 +954,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.s: home/kakacafu
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
@@ -962,7 +962,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.obj: h
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.i: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
@@ -970,7 +970,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.i: hom
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.s: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
@@ -978,7 +978,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.s: hom
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -986,7 +986,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.obj: home/kak
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
@@ -994,7 +994,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.obj: ho
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.i: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
@@ -1002,7 +1002,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.i: home
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.s: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
@@ -1010,7 +1010,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.s: home
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
@@ -1018,7 +1018,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.obj: home/kakacafu/p
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.i: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
@@ -1026,7 +1026,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.i: home/kakacafu/pic
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.s: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
@@ -1034,7 +1034,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.s: home/kakacafu/pic
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
@@ -1042,7 +1042,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj: home/kakacafu
 
 # target to build an object file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
@@ -1050,7 +1050,7 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i: home/kakacafu/p
 
 # target to preprocess a source file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
 
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s: home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
@@ -1058,32 +1058,32 @@ home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s: home/kakacafu/p
 
 # target to generate assembly for a file
 home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 .PHONY : home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 
-test.obj: test.c.obj
-.PHONY : test.obj
+test_dual.obj: test_dual.c.obj
+.PHONY : test_dual.obj
 
 # target to build an object file
-test.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.obj
-.PHONY : test.c.obj
+test_dual.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/test_dual.c.obj
+.PHONY : test_dual.c.obj
 
-test.i: test.c.i
-.PHONY : test.i
+test_dual.i: test_dual.c.i
+.PHONY : test_dual.i
 
 # target to preprocess a source file
-test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.i
-.PHONY : test.c.i
+test_dual.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/test_dual.c.i
+.PHONY : test_dual.c.i
 
-test.s: test.c.s
-.PHONY : test.s
+test_dual.s: test_dual.c.s
+.PHONY : test_dual.s
 
 # target to generate assembly for a file
-test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.s
-.PHONY : test.c.s
+test_dual.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dual.dir/build.make CMakeFiles/test_dual.dir/test_dual.c.s
+.PHONY : test_dual.c.s
 
 # Help Target
 help:
@@ -1097,7 +1097,7 @@ help:
 	@echo "... bs2_default_bin"
 	@echo "... bs2_default_padded_checksummed_asm"
 	@echo "... bs2_default"
-	@echo "... test"
+	@echo "... test_dual"
 	@echo "... home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.obj"
 	@echo "... home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.i"
 	@echo "... home/kakacafu/pico/pico-sdk/src/common/pico_sync/critical_section.s"
@@ -1208,9 +1208,9 @@ help:
 	@echo "... home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj"
 	@echo "... home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i"
 	@echo "... home/kakacafu/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s"
-	@echo "... test.obj"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... test_dual.obj"
+	@echo "... test_dual.i"
+	@echo "... test_dual.s"
 .PHONY : help
 
 

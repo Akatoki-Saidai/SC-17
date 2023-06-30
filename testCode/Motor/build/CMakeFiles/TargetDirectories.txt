@@ -1,4 +1,4 @@
-/home/kakacafu/SC-17/testCode/Motor/build/CMakeFiles/test.dir
+/home/kakacafu/SC-17/testCode/Motor/build/CMakeFiles/test_dual.dir
 /home/kakacafu/SC-17/testCode/Motor/build/CMakeFiles/ELF2UF2Build.dir
 /home/kakacafu/SC-17/testCode/Motor/build/CMakeFiles/edit_cache.dir
 /home/kakacafu/SC-17/testCode/Motor/build/CMakeFiles/rebuild_cache.dir

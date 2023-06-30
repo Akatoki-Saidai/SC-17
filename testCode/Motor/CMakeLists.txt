@@ -13,14 +13,14 @@ set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 
 #Add an executable target to be build from the source files
-add_executable(test test.c)
+add_executable(test_dual test_dual.c)
 
 #Pull in our pico_stdlib which aggregates commonly used features
-target_link_libraries(test pico_stdlib hardware_gpio hardware_pwm)
+target_link_libraries(test_dual pico_stdlib hardware_gpio hardware_pwm)
 
 #Enable USB output, disable UART output
-pico_enable_stdio_usb(test 1)
-pico_enable_stdio_uart(test 0)
+pico_enable_stdio_usb(test_dual 1)
+pico_enable_stdio_uart(test_dual 0)
 
 #Create map/bin/hex/uf2 file etc.
-pico_add_extra_outputs(test)
+pico_add_extra_outputs(test_dual)
