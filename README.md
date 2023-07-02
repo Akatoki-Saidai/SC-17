@@ -92,7 +92,7 @@ https://dev.grapecity.co.jp/support/powernews/column/clang/003/page03.htm
 # プログラムを作成、または変更したら
 1.コマンドラインを開き、cd SC-16 と入力でフォルダを移動する  
 2.git add .  と入力(1つのファイルだけアップロードしたかったら、git add ファイル名)   
-3.git commit -f "何かメッセージ書く(何を作成、変更したか)"    
+3.git commit -m "何かメッセージ書く(何を作成、変更したか)"    
 4.git push origin main とうつ  
 * ほかの人が作業して、SC-16の中身が変更されたら、git pull で変更点を自分のパソコンに反映できる。
 * add や commit , push の取り消し方は一番上のURLを参照   
