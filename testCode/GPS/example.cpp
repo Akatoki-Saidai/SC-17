@@ -6,8 +6,8 @@ int main() {
 
     GPS myGPS(
         0,    //uart0 or uart1
-        16,   //tx_pin(GPIO_no)  RP_pico:TX----RX:GPS(Green)
-        17,   //rx_pin(GPIO_no)  RP_pico:RX----TX:GPS(Orange)
+        1,   //tx_pin(GPIO_no)  RP_pico:TX----RX:GPS(Green)
+        2,   //rx_pin(GPIO_no)  RP_pico:RX----TX:GPS(Orange)
         9600  //baud_rate
     );
     GPS::Measurement_t values;
