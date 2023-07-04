@@ -1,0 +1,5 @@
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/testCode/GPS/build/elf2uf2/CMakeFiles/elf2uf2.dir
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/testCode/GPS/build/elf2uf2/CMakeFiles/edit_cache.dir
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/testCode/GPS/build/elf2uf2/CMakeFiles/rebuild_cache.dir
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/testCode/GPS/build/elf2uf2/boot_uf2_headers/CMakeFiles/edit_cache.dir
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/testCode/GPS/build/elf2uf2/boot_uf2_headers/CMakeFiles/rebuild_cache.dir
