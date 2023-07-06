@@ -27,7 +27,7 @@ int main() {
 
         // 結果を出力
         //一定時間内に読み取れなかったデータは-1024が出力される．(前回読み取った値がもう一度出力されるように変更可)
-        printf("lat,lon         : %8.5f,%9.5f\n", values.lat, values.lon); //緯度,経度  北緯&東経が正, 南緯&西経が負 小数点以下五桁まで有効
+        printf("lat,lon         : %10.7f,%11.7f\n", values.lat, values.lon); //緯度,経度  北緯&東経が正, 南緯&西経が負
         printf("altitude        : %6.2f m\n",     values.altitude); //高度  開けた場所でないと精度は良くない  使わないほうがいい
         printf("HDOP            : %6.2f\n",       values.HDOP); //水平方向の精度低下
         printf("geoid_separation: %6.2f m\n",     values.geoid_separation); //ジオイド高  普段使っている高度0 mと，地球を楕円体とみなした時の地表面の高さとの差（場所によって異なる）
