@@ -98,6 +98,22 @@ CMakeFiles/GT_902PMGG.dir/GT_902PMGG_irq.cpp.obj: \
  /usr/include/newlib/c++/10.3.1/bits/stl_uninitialized.h \
  /usr/include/newlib/c++/10.3.1/bits/stl_deque.h \
  /usr/include/newlib/c++/10.3.1/bits/deque.tcc \
+ /usr/include/newlib/c++/10.3.1/cmath \
+ /usr/include/newlib/c++/10.3.1/math.h /usr/include/newlib/math.h \
+ /usr/include/newlib/c++/10.3.1/bits/specfun.h \
+ /usr/include/newlib/c++/10.3.1/limits \
+ /usr/include/newlib/c++/10.3.1/tr1/gamma.tcc \
+ /usr/include/newlib/c++/10.3.1/tr1/special_function_util.h \
+ /usr/include/newlib/c++/10.3.1/tr1/bessel_function.tcc \
+ /usr/include/newlib/c++/10.3.1/tr1/beta_function.tcc \
+ /usr/include/newlib/c++/10.3.1/tr1/ell_integral.tcc \
+ /usr/include/newlib/c++/10.3.1/tr1/exp_integral.tcc \
+ /usr/include/newlib/c++/10.3.1/tr1/hypergeometric.tcc \
+ /usr/include/newlib/c++/10.3.1/tr1/legendre_function.tcc \
+ /usr/include/newlib/c++/10.3.1/tr1/modified_bessel_func.tcc \
+ /usr/include/newlib/c++/10.3.1/tr1/poly_hermite.tcc \
+ /usr/include/newlib/c++/10.3.1/tr1/poly_laguerre.tcc \
+ /usr/include/newlib/c++/10.3.1/tr1/riemann_zeta.tcc \
  /home/n17y17/pico/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
  /home/n17y17/pico/pico-sdk/src/common/pico_base/include/pico.h \
  /home/n17y17/pico/pico-sdk/src/common/pico_base/include/pico/types.h \

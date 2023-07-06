@@ -1,15 +1,15 @@
 /*
-このプログラムは Raspberry pi pico で GPSセンサ GT_902PMGGを読み取るためのものです．
-通信方式はUARTを使用しています
+このプログラムはGPSセンサ GT_902PMGGを読み取るためのものです．
 
 データの受信に割り込み処理を利用することで，センサの値を直ちに返すことができます．
-一方で，割り込み処理によってほかのプログラムに影響を与える可能性を否定できません．
+ただし，割り込み処理によってほかのプログラムに影響を与える可能性を否定できません．
 
 このプログラムを作るにあたって，以下のプログラムを参考にしました．
     https://www.mztn.org/rpi/rpi53.html
     https://github.com/raspberrypi/pico-examples/blob/master/uart/uart_advanced/uart_advanced.c
     https://github.com/ms1963/bme280_spi/find/main
     https://orsj.org/wp-content/corsj/or60-12/or60_12_701.pdf
+    https://www.logical-arts.jp/archives/18
 
 長澤 悠太
 */
@@ -47,6 +47,9 @@ GPS::GPS(
     uart_set_format(uart_hw, DATA_BITS, STOP_BITS, PARITY);
 
     (uart_id ? gps::recv1 : gps::recv0).resize(read_len);
+
+    target_lat = 0;
+    target_lon = 0;
 
     //ここから割り込み処理の設定
 
@@ -91,8 +94,8 @@ GPS::Measurement_t GPS::measure(){
     
     //------------------------------
     // この部分を削除することで，データを受信できなかった時にエラーの値-1024ではなく前回受信した値が出力されます．
-    measurement.lat = measurement.lon = -1024.0;
-    measurement.altitude = measurement.geoid_separation = measurement.velocity = measurement.second = -1024.0F;
+    measurement.lat = measurement.lon = measurement.target_angle = measurement.target_distance = -1024.0;
+    measurement.altitude = measurement.HDOP = measurement.geoid_separation = measurement.velocity = measurement.second = -1024.0F;
     measurement.minute = measurement.hour = measurement.day = measurement.month = measurement.year = -1024;
     //------------------------------
 
@@ -131,6 +134,7 @@ GPS::Measurement_t GPS::measure(){
                 output_time(split_data.at(1));
                 output_lat(split_data.at(2), split_data.at(3));
                 output_lon(split_data.at(4), split_data.at(5));
+                output_HDOP(split_data.at(8));
                 output_altitude(split_data.at(9));
                 output_geoid_separation(split_data.at(11));
             }
@@ -156,13 +160,20 @@ GPS::Measurement_t GPS::measure(){
     }
 
     UTCtoJST_date();
+    output_target();
 
     return measurement;
 }
 
+//目標物の座標を設定
+void GPS::set_target(double target_lat_, double target_lon_){
+    target_lat = target_lat_;
+    target_lon = target_lon_;
+}
+
 inline void GPS::output_time(std::string &value_str){
     if(value_str.size() == 9){
-        measurement.hour = ((value_str.at(0)-'0')*10 + (value_str.at(1)-'0') + 9) % 24;
+        measurement.hour = ((value_str.at(0)-'0')*10 + (value_str.at(1)-'0') + time_diff) % 24;
         measurement.minute = (value_str.at(2)-'0')*10 + value_str.at(3)-'0';
         measurement.second = (value_str.at(4)-'0')*10 + (value_str.at(5)-'0'); //小数形式で与えられるが，.00しか出力されないようなので小数部分は無視する
     }
@@ -186,6 +197,12 @@ inline void GPS::output_altitude(std::string &value_str){
     }
 }
 
+inline void GPS::output_HDOP(std::string &value_str){
+    if(value_str != ""){
+        measurement.HDOP = std::stof(value_str);
+    }
+}
+
 inline void GPS::output_geoid_separation(std::string &value_str){
     if(value_str != ""){
         measurement.geoid_separation = std::stof(value_str);
@@ -206,10 +223,39 @@ inline void GPS::output_date(std::string &value_str){
     }
 }
 
+void GPS::output_target(){
+    if(measurement.lat==-1024.0 || measurement.lon==-1024.0){
+        measurement.target_angle = measurement.target_distance = -1024.0;
+        return;
+    }
+
+    double t_lat_rad = target_lat * M_PI / 180;
+    double m_lat_rad = measurement.lat * M_PI / 180;
+    double t_lon_rad = target_lon * M_PI / 180;
+    double m_lon_rad = measurement.lon * M_PI / 180;
+
+    double cos_n = sin(t_lat_rad)*sin(m_lat_rad) + cos(t_lat_rad)*cos(m_lat_rad)*cos(t_lon_rad-m_lon_rad);
+
+    measurement.target_distance = R * acos(cos_n);
+
+    if(measurement.lon==target_lon && measurement.lat==target_lat){
+        //同じ二点では角度は定義されない
+        measurement.target_angle=-1024.0;
+        return;
+    }
+    measurement.target_angle = atan((cos(m_lat_rad)*cos(t_lat_rad)*sin(t_lon_rad-m_lon_rad))/(sin(t_lat_rad)-sin(m_lat_rad)*(cos_n))) * 180 / M_PI;
+    //東経から西経などへの計算も正確にするため，場合分けをしている．
+    if     (target_lon-measurement.lon > 180) measurement.target_angle += (measurement.target_angle < 0 ? 360 : 180);
+    else if(target_lon-measurement.lon >   0) measurement.target_angle += (measurement.target_angle < 0 ? 180 :   0);
+    else if(target_lon-measurement.lon >-180) measurement.target_angle += (measurement.target_angle < 0 ? 360 : 180);
+    else                                      measurement.target_angle += (measurement.target_angle < 0 ? 180 :   0);
+}
+
+
 // 時差を考慮して日付を変更
 void GPS::UTCtoJST_date(){
     if(measurement.hour!=-1024 && measurement.day!=-1024){
-        if(measurement.hour < 9){
+        if(measurement.hour < time_diff){
             if(measurement.day >= 28){
                 if(measurement.month == -1024){
                     measurement.day = -1024;
