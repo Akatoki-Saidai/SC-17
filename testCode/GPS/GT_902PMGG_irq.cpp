@@ -224,10 +224,7 @@ inline void GPS::output_date(std::string &value_str){
 }
 
 void GPS::output_target(){
-    if(measurement.lat==-1024.0 || measurement.lon==-1024.0){
-        measurement.target_angle = measurement.target_distance = -1024.0;
-        return;
-    }
+    if(measurement.lat==-1024.0 || measurement.lon==-1024.0) return;
 
     double t_lat_rad = target_lat * M_PI / 180;
     double m_lat_rad = measurement.lat * M_PI / 180;
@@ -238,11 +235,9 @@ void GPS::output_target(){
 
     measurement.target_distance = R * acos(cos_n);
 
-    if(measurement.lon==target_lon && measurement.lat==target_lat){
-        //同じ二点では角度は定義されない
-        measurement.target_angle=-1024.0;
-        return;
-    }
+    //同じ二点では角度は定義されない
+    if(measurement.lon==target_lon && measurement.lat==target_lat) return;
+    
     measurement.target_angle = atan((cos(m_lat_rad)*cos(t_lat_rad)*sin(t_lon_rad-m_lon_rad))/(sin(t_lat_rad)-sin(m_lat_rad)*(cos_n))) * 180 / M_PI;
     //東経から西経などへの計算も正確にするため，場合分けをしている．
     if     (target_lon-measurement.lon > 180) measurement.target_angle += (measurement.target_angle < 0 ? 360 : 180);
