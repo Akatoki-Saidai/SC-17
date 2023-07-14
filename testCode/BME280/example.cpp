@@ -34,8 +34,8 @@ int main() {
         printf("temperature: %6.3f `C\n",   values.temperature);  //気温
         printf("humidity   : %6.3f %c\n",  values.humidity, '%'); //湿度
         printf("pressure   : %6.3f hPa\n", values.pressure);      //気圧
-        printf("altitude   : %6.3f m\n",   values.altitude_1);    //標高  アルゴリズム1
-        printf("altitude   : %6.3f m\n",   values.altitude_2);    //標高  アルゴリズム2
+        printf("altitude   : %6.3f m\n",   values.altitude_1);    //標高  公式1  //標高は2バージョン作ってみました
+        printf("altitude   : %6.3f m\n",   values.altitude_2);    //標高  公式2  //公式2は基準点の気温が不要です
         printf("\n\n");
         sleep_ms(2000);
     }
