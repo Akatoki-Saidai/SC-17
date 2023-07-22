@@ -11,7 +11,6 @@
     https://orsj.org/wp-content/corsj/or60-12/or60_12_701.pdf
     https://www.logical-arts.jp/archives/18
 
-長澤 悠太
 */
 
 #include "GT_902PMGG_irq.hpp"
