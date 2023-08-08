@@ -1,10 +1,10 @@
 #include "pico/stdlib.h"
 #include "hardware/gpio.h"
 #include "hardware/pwm.h"
-#define PIN_PWM0 2
-#define PIN_PWM1 4
-#define PIN_PWM2 6
-#define PIN_PWM3 8
+#define PIN_PWM0 18
+#define PIN_PWM1 19
+#define PIN_PWM2 20
+#define PIN_PWM3 21
 
 //good web site https://qiita.com/keyyum/items/8cb419f5278e13b6db4d
 //https://kirikoshokunin.hatenablog.com/entry/2021/04/18/221012
