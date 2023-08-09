@@ -14,6 +14,8 @@ I2C用に書き換える際には，以下を参考にしました．
 くらいになります．
 */
 
+auto not0 = [](auto n){return (n ? n : 1);}; //ゼロ除算防止
+
 // Initialize BME280 sensor
 BME280::BME280(  uint i2c_no    = 0, 
                  uint sda_pin   = PICO_DEFAULT_I2C_SDA_PIN, 
@@ -95,8 +97,8 @@ BME280::Measurement_t BME280::measure() {
     measurement.temperature = temperature / 100.0;
 
     // apply formula to retrieve altitude from air pressure
-    measurement.altitude_1 = altitude0 + ((temperature0 + 273.15F) / 0.0065F) * (1 - pow((measurement.pressure / pressure0), (1.0F / 5.257F)));
-    measurement.altitude_2 = altitude0 + ((measurement.temperature + 273.15F) / 0.0065F) * (pow((pressure0 / measurement.pressure), 1.0F / 5.257F) -1.0F);
+    measurement.altitude_1 = altitude0 + ((temperature0 + 273.15F) / 0.0065F) * (1 - pow((measurement.pressure / not0(pressure0)), (1.0F / 5.257F)));
+    measurement.altitude_2 = altitude0 + ((measurement.temperature + 273.15F) / 0.0065F) * (pow((pressure0 / not0(measurement.pressure)), 1.0F / 5.257F) -1.0F);
     
     return measurement;
 }
@@ -131,9 +133,9 @@ uint32_t BME280::compensate_pressure(int32_t adc_P) {
 
     p = (((uint32_t) (((int32_t) 1048576) - adc_P) - (var2 >> 12))) * 3125;
     if (p < 0x80000000)
-        p = (p << 1) / ((uint32_t) var1);
+        p = (p << 1) / ((uint32_t) not0(var1));
     else
-        p = (p / (uint32_t) var1) * 2;
+        p = (p / (uint32_t) not0(var1)) * 2;
 
     var1 = (((int32_t) dig_P9) * ((int32_t) (((p >> 3) * (p >> 3)) >> 13))) >> 12;
     var2 = (((int32_t) (p >> 2)) * ((int32_t) dig_P8)) >> 13;
