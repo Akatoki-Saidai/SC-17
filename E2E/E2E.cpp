@@ -4,7 +4,7 @@
 #include "hardware/pwm.h"
 #include "hardware/uart.h"
 
-#include "bme280.hpp"
+#include "BME280.hpp"
 
 #include "BNO055.h"
 
@@ -107,7 +107,12 @@ int main(){
         gps = myGPS.measure();
         BNO055_accel_mag();
         float target_angle = calc_target_angle(gps, heading); 
- 
+
+        while(gps.lat == -1024){
+            tight_loop_contents();
+            gps = myGPS.measure();
+            sleep_ms(100);
+        }
 
         switch(fase){
             case 1:     //待機フェーズ
