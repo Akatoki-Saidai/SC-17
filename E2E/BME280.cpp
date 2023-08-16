@@ -14,7 +14,7 @@ I2C用に書き換える際には，以下を参考にしました．
 くらいになります．
 */
 
-auto not0 = [](auto n){return (n ? n : 1);}; //ゼロ除算防止
+auto not0_b = [](auto n){return (n ? n : 1);}; //ゼロ除算防止
 
 // Initialize BME280 sensor
 BME280::BME280(  uint i2c_no    = 0, 
@@ -97,8 +97,8 @@ BME280::Measurement_t BME280::measure() {
     measurement.temperature = temperature / 100.0;
 
     // apply formula to retrieve altitude from air pressure
-    measurement.altitude_1 = altitude0 + ((temperature0 + 273.15F) / 0.0065F) * (1 - pow((measurement.pressure / not0(pressure0)), (1.0F / 5.257F)));
-    measurement.altitude_2 = altitude0 + ((measurement.temperature + 273.15F) / 0.0065F) * (pow((pressure0 / not0(measurement.pressure)), 1.0F / 5.257F) -1.0F);
+    measurement.altitude_1 = altitude0 + ((temperature0 + 273.15F) / 0.0065F) * (1 - pow((measurement.pressure / not0_b(pressure0)), (1.0F / 5.257F)));
+    measurement.altitude_2 = altitude0 + ((measurement.temperature + 273.15F) / 0.0065F) * (pow((pressure0 / not0_b(measurement.pressure)), 1.0F / 5.257F) -1.0F);
     
     return measurement;
 }
