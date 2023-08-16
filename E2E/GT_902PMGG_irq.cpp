@@ -14,7 +14,7 @@
 
 #include "GT_902PMGG_irq.hpp"
 
-auto not0 = [](auto n){return (n ? n : 0.001);}; //ゼロ除算防止
+auto not0_a = [](auto n){return (n ? n : 0.001);}; //ゼロ除算防止
 
 //読み取ったGPSの値をdequeに保存
 namespace gps{
@@ -252,7 +252,7 @@ void GPS::output_target(){
     //同じ二点では角度は定義されない
     if(measurement.lon==target_lon && measurement.lat==target_lat) return;
     
-    measurement.target_angle = atan((cos(m_lat_rad)*cos(t_lat_rad)*sin(t_lon_rad-m_lon_rad))/not0(sin(t_lat_rad)-sin(m_lat_rad)*(cos_n))) * 180 / M_PI;
+    measurement.target_angle = atan((cos(m_lat_rad)*cos(t_lat_rad)*sin(t_lon_rad-m_lon_rad))/not0_a(sin(t_lat_rad)-sin(m_lat_rad)*(cos_n))) * 180 / M_PI;
     //東経から西経などへの計算も正確にするため，場合分けをしている．
     if     (target_lon-measurement.lon > 180) measurement.target_angle += (measurement.target_angle < 0 ? 360 : 180);
     else if(target_lon-measurement.lon >   0) measurement.target_angle += (measurement.target_angle < 0 ? 180 :   0);
