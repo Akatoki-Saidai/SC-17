@@ -133,9 +133,9 @@ uint32_t BME280::compensate_pressure(int32_t adc_P) {
 
     p = (((uint32_t) (((int32_t) 1048576) - adc_P) - (var2 >> 12))) * 3125;
     if (p < 0x80000000)
-        p = (p << 1) / ((uint32_t) not0(var1));
+        p = (p << 1) / ((uint32_t) not0_b(var1));
     else
-        p = (p / (uint32_t) not0(var1)) * 2;
+        p = (p / (uint32_t) not0_b(var1)) * 2;
 
     var1 = (((int32_t) dig_P9) * ((int32_t) (((p >> 3) * (p >> 3)) >> 13))) >> 12;
     var2 = (((int32_t) (p >> 2)) * ((int32_t) dig_P8)) >> 13;
