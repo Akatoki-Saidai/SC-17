@@ -62,23 +62,23 @@ void motor_init(void) {
     pwm_set_enabled(pwm3_slice_num, true);   
 }    
 
-void forward(double duty){
+void back(double duty){
     //duty 50%
     pwm_set_gpio_level( PIN_PWM0, ( pwm0_slice_config.top * duty ) );
-    pwm_set_gpio_level( PIN_PWM2,( pwm2_slice_config.top * duty ));
+    pwm_set_gpio_level( PIN_PWM2, ( pwm2_slice_config.top * duty ) );
 }
 
-void back(double duty){
+void forward(double duty){
     pwm_set_gpio_level( PIN_PWM1, ( pwm1_slice_config.top * duty ) );
     pwm_set_gpio_level( PIN_PWM3, ( pwm3_slice_config.top * duty ) );
 }
 
 void right(double duty){
-    pwm_set_gpio_level( PIN_PWM0, ( pwm0_slice_config.top * duty ) );
-    pwm_set_gpio_level( PIN_PWM2, ( pwm2_slice_config.top * 0 ) );
+    pwm_set_gpio_level( PIN_PWM1, ( pwm0_slice_config.top * duty ) );
+    pwm_set_gpio_level( PIN_PWM2, ( pwm2_slice_config.top * duty ) );
 }
 
 void left(double duty){
-    pwm_set_gpio_level( PIN_PWM0, ( pwm0_slice_config.top * 0 ) );
-    pwm_set_gpio_level( PIN_PWM2,( pwm2_slice_config.top * duty ));
+    pwm_set_gpio_level( PIN_PWM0, ( pwm0_slice_config.top * duty ) );
+    pwm_set_gpio_level( PIN_PWM3, ( pwm2_slice_config.top * duty ) );
 }
