@@ -1,16 +1,21 @@
+#include "stdio.h"
 #include "string.h"
 #include "math.h"
 #include "pico/stdlib.h"
+#include "hardware/gpio.h"
 #include "hardware/pwm.h"
 #include "hardware/uart.h"
+#include "hardware/timer.h"
 
-#include "BME280.hpp"
+#include "bme280.hpp"
 
 #include "BNO055.h"
 
 #include "GT_902PMGG_irq.hpp"
 
 #include "motor_dual.hpp"
+
+#include "SendCoordinate.h"
 
 #include "f_util.h"
 #include "ff.h"
@@ -20,21 +25,21 @@
 #define PI 3.14159265359
 #define RAD_TO_DEG(rad) ((rad) * (180.0 / PI))
 
-int fase = 3; //スタートフェーズ　1:待機，2:落下，3:分離，4:遠距離，　5:近距離
+int fase = 1; //スタートフェーズ　1:待機，2:落下，3:分離，4:遠距離，　5:近距離
 
-double goal_lat = 35.85973464764691, goal_lon = 139.60499687714605; //ゴール座標
+double goal_lat = 40.1426031670, goal_lon = 139.9876123330; //ゴール座標
 
-float calc_target_angle(GPS::Measurement_t gps, double heading);
+//float calc_target_angle(GPS::Measurement_t gps, double heading);
 
 float standerd_altitude;
 
-#define BAUD_RATE 115200
-#define DATA_BITS 8
-#define STOP_BITS 1
-#define PARITY UART_PARITY_NONE
+// #define BAUD_RATE 9600
+// #define DATA_BITS 8
+// #define STOP_BITS 1
+// #define PARITY UART_PARITY_NONE
 
-#define RX_PIN_1 8
-#define TX_PIN_1 9
+// #define RX_PIN_1 8
+// #define TX_PIN_1 9
 
 
 int main(){
@@ -62,6 +67,7 @@ int main(){
 
     BNO055_init();
     motor_init();
+    uart1_init();
 
     sleep_ms(100);
 
@@ -78,12 +84,16 @@ int main(){
     }
     standerd_altitude /= 10;    
 
-    gpio_init(RX_PIN_1);
-    gpio_init(TX_PIN_1);
-    gpio_set_function(RX_PIN_1, GPIO_FUNC_UART);
-    gpio_set_function(TX_PIN_1, GPIO_FUNC_UART);
-    uart_init(uart1, BAUD_RATE);
-    uart_set_format(uart1, DATA_BITS, STOP_BITS, PARITY);
+    // gpio_init(RX_PIN_1);
+    // gpio_init(TX_PIN_1);
+    // gpio_set_function(RX_PIN_1, GPIO_FUNC_UART);
+    // gpio_set_function(TX_PIN_1, GPIO_FUNC_UART);
+    // uart_init(uart1, BAUD_RATE);
+    // uart_set_format(uart1, DATA_BITS, STOP_BITS, PARITY);
+    // absolute_time_t startTime, endTime;
+    // char *coordinate_char, *area_char;
+    // bool isTextReceived;
+    // int coordinate, area;
 
     sd_card_t *pSD = sd_get_by_num(0);
     FRESULT fr = f_mount(&pSD->fatfs, pSD->pcName, 1);
@@ -91,14 +101,21 @@ int main(){
     FIL fil;
     const char* const filename = "CanSat_Logdata.txt";
     fr = f_open(&fil, filename, FA_OPEN_APPEND | FA_WRITE);
-
+    sleep_ms(100);
+    f_printf(&fil, "date, time");
+    sleep_ms(10);
+    f_printf(&fil, "fase");
+    sleep_ms(10);
     f_printf(&fil, "latitude, longitude, distance, ");
+    sleep_ms(10);
     f_printf(&fil, "temperature, humidity, pressure, altitude, ");
+    sleep_ms(10);
     f_printf(&fil, "accel_X, accel_Y, accel_Z, resultant_accel");
-    f_printf(&fil, "mag_X, mag_Y, mag_Z, ");
-    f_printf(&fil, "azimuth, derection, target_angle, ");
-    f_printf(&fil, "fase\n");
+    sleep_ms(10);f_printf(&fil, "mag_X, mag_Y, mag_Z, ");
+    f_printf(&fil, "azimuth, derection, target_angle\n");
+    sleep_ms(10);
     fr = f_close(&fil);
+    
 
     sleep_ms(1000);
 
@@ -106,14 +123,20 @@ int main(){
         bme = myBME280.measure();
         gps = myGPS.measure();
         BNO055_accel_mag();
-        float target_angle = calc_target_angle(gps, heading); 
+        float target_angle = gps.target_angle - heading; 
+
+        if (target_angle < 0) {
+            target_angle += 360.0;
+        } else if (target_angle >= 360.0) {
+            target_angle -= 360.0;
+        }
 
         while(gps.lat == -1024){
             tight_loop_contents();
-            gps = myGPS.measure();
             sleep_ms(100);
+            gps = myGPS.measure();
         }
-
+ 
         switch(fase){
             case 1:     //待機フェーズ
                 if(resultant_accel > 20){
@@ -133,6 +156,7 @@ int main(){
                 }
             
             case 3:     //分離フェーズ
+                sleep_ms(15000);
                 forward(1);
                 sleep_ms(2000);
                 forward(0.2);
@@ -145,104 +169,195 @@ int main(){
             
             case 4:     //遠距離フェーズ
                 if(gps.target_distance < 5){
-                    fase = 5;
-                    sleep_ms(100);
-                    break;
+                    //fase = 5;
+                    printf("GOAL\n");
+                    gpio_put(25, 1);
+                    fr = f_open(&fil, filename, FA_OPEN_APPEND | FA_WRITE);
+                    f_printf(&fil, "%d-%d-%d, ", gps.year, gps.month, gps.day);
+                    sleep_ms(10);
+                    f_printf(&fil, "%d:%d:%d, ", gps.hour, gps.minute, gps.second);
+                    sleep_ms(10);
+                    f_printf(&fil, "GOAL!!\n");
+                    fr = f_close(&fil);
+                    while(true){
+                        tight_loop_contents();
+                    }
+                    //sleep_ms(100);
+                    //break;
                 }
                 if(target_angle < 45 || target_angle > 315){
                     printf("forward\n");
                     forward(1);
                     sleep_ms(3000);
+                    forward(0.6);
+                    sleep_ms(1000);
                     forward(0.2);
-                    sleep_ms(100);
+                    sleep_ms(1000);
                     forward(0);
                     sleep_ms(100);
                     break;
-                }else if((target_angle) <180){
+                }else if((target_angle) <135){
+                    printf("right\n");
+                    right(0.5);
+                    sleep_ms(300);
+                    right(0);
+                    sleep_ms(100);
+                    break;
+                }else if(target_angle < 180){
+                    printf("sharp_right\n");
+                    right(0.5);
+                    sleep_ms(600);
+                    right(0);
+                    sleep_ms(100);
+                    break;
+                }else if(target_angle > 225){
                     printf("left\n");
-                    left(1);
-                    sleep_ms(500);
+                    left(0.5);
+                    sleep_ms(300);
                     left(0);
                     sleep_ms(100);
                     break;
                 }else{
-                    printf("right\n");
-                    right(1);
-                    sleep_ms(500);
-                    right(0);
+                    printf("sharp_left\n");
+                    left(0.5);
+                    sleep_ms(600);
+                    left(0);
                     sleep_ms(100);
                     break;
                 }
 
             case 5:     //近距離フェーズ
-                char *c;
-                uart_puts(uart1, "s");
-                sleep_ms(500);
-                while (!uart_is_readable(uart1)) {
-                    tight_loop_contents();
-                }
-                while (uart_is_readable(uart1)) {
-                    *c = uart_getc(uart1);
-                    putchar(*c);
-                }
-                if(*c == '0'){
-                    printf("GOAL\n");
-                    return 0;
-                }else{
-                    if(*c == '1'){
-                        right(1);
-                        sleep_ms(500);
-                        right(0);
-                        sleep_ms(100);
-                        break;
-                    }else if(*c == '2'){
+                // char c;
+                // char str[100] = {0};
+                // bool isTextReceived = false;
+
+                // uart_puts(uart1, "SendCoordinate");
+                // printf("sent\n");
+                // startTime = get_absolute_time();
+                // while (!uart_is_readable(uart1)) {
+                //     tight_loop_contents();
+                //     endTime = get_absolute_time();
+                //     if(absolute_time_diff_us(startTime, endTime) > 10000000){
+                //         break;
+                //     }
+                // }
+                // while (uart_is_readable(uart1)) {
+                //     c = uart_getc(uart1);
+                //     strncat(str, &c, 1); // 1文字ずつ追加する
+                //     sleep_ms(10);
+                //     isTextReceived = true;
+                // }
+                // if(isTextReceived){
+                //     coordinate_char = strtok(str, ",");
+                //     area_char = strtok(NULL, ",");
+                //     printf("coordinate_char: %s, ", coordinate_char);
+                //     printf("area_char: %s\n", area_char);
+                //     coordinate = atoi(coordinate_char);
+                //     area = atoi(area_char);
+                //     printf("cooedinate_char: %d, ", coordinate);
+                //     printf("area: %d\n", area);
+                // }else{
+                //     printf("not received\n");
+                //     break;
+                // }
+                SendCoordinate();
+                if(isTextReceived){
+                    if(area > 200000){
+                        printf("3\n");
                         forward(1);
                         sleep_ms(1000);
                         forward(0);
-                        sleep_ms(100);
-                        break;
-                    }else if(*c == '3'){
-                        left(1);
-                        sleep_ms(500);
-                        left(0);
-                        sleep_ms(100);
-                        break;
+
+                        printf("GOAL\n");
+
+                        fr = f_open(&fil, filename, FA_OPEN_APPEND | FA_WRITE);
+                        f_printf(&fil, "%d-%d-%d, ", gps.year, gps.month, gps.day);
+                        sleep_ms(10);
+                        f_printf(&fil, "%d:%d:%d, ", gps.hour, gps.minute, gps.second);
+                        sleep_ms(10);
+                        f_printf(&fil, "GOAL!!\n");
+                        fr = f_close(&fil);
+                        while(true){
+                            tight_loop_contents();
+                        }
                     }else{
-                        right(1);
-                        sleep_ms(1000);
-                        right(0);
-                        sleep_ms(100);
-                        break;
+                        if(coordinate < 0){
+                            printf("turn\n");
+                            right(0.5);
+                            sleep_ms(500);
+                            right(0);
+                            sleep_ms(100);
+                            break;
+                        }else if(coordinate < 215){
+                            printf("left\n");
+                            left(0.5);
+                            sleep_ms(500);
+                            left(0);
+                            sleep_ms(100);
+                            break;
+                        }else if(coordinate < 425){
+                            printf("forward\n");
+                            forward(1);
+                            sleep_ms(3000);
+                            forward(0.6);
+                            sleep_ms(1000);
+                            forward(0.2);
+                            sleep_ms(1000);
+                            forward(0);
+                            sleep_ms(100);
+                            break;
+                        }else{
+                            printf("right\n");
+                            right(0.5);
+                            sleep_ms(500);
+                            right(0);
+                            sleep_ms(100);
+                            break;
+                        }
                     }
                 }
         }
 
-        //sleep_ms(100);
-        printf("lat:%.10f, lon:%.10f, distance:%10.6f\n",gps.lat, gps.lon, gps.target_distance );
         sleep_ms(10);
-        printf("temperature:%6.3f`C, humidity:%6.3f %c, pressure:%6.3fhPa, altitude:%6.3fm\n", bme.temperature, bme.humidity, bme.pressure, bme.altitude_2);
+        printf("date:%d-%d-%d\n", gps.year, gps.month, gps.day);
+        printf("time:%d:%d:%d\n", gps.hour, gps.minute, gps.second);
+        printf("lat:%.10f, lon:%.10f, distance:%10.6f\n",gps.lat, gps.lon, gps.target_distance );
+        printf("temperature:%6.3f`C, humidity:%6.3f %c, pressure:%7.3fhPa, altitude:%6.3fm\n", bme.temperature, bme.humidity, bme.pressure, bme.altitude_2);
         printf("acceleration X:%6.2lf, Y:%6.2lf, Z: %6.2lf, resultant: %6.2lf, \n", f_accelX, f_accelY, f_accelZ, resultant_accel);
         printf("geomagnetism X: %6.2lf, Y: %6.2lf, Z: %6.2lf\n", f_magX, f_magY, f_magZ);
         printf("azimuth:%8.5f, derection:%.2lf, target_angle:%8.5f\n", gps.target_angle, heading, target_angle);
-        printf("fase:%d\n", fase);
-        
+        printf("fase:%d\n", fase); 
         sleep_ms(100);
+
         fr = f_open(&fil, filename, FA_OPEN_APPEND | FA_WRITE);
+        sleep_ms(10);
+        f_printf(&fil, "%d-%d-%d, ", gps.year, gps.month, gps.day);
+        sleep_ms(10);
+        f_printf(&fil, "%d:%d:%d, ", gps.hour, gps.minute, gps.second);
+        sleep_ms(10);
+        f_printf(&fil, "%d", fase);
+        sleep_ms(10);
         f_printf(&fil, "%.10f, %.10f, %10.6f, ",gps.lat, gps.lon, gps.target_distance );
+        sleep_ms(10);
         f_printf(&fil, "%6.3f, %6.3f, %6.3f, %6.3f, ", bme.temperature, bme.humidity, bme.pressure, bme.altitude_2);
-        f_printf(&fil, "%6.2lf, %6.2lf, %6.2lf, %6.2lf", f_accelX, f_accelY, f_accelZ, resultant_accel);
+        sleep_ms(10);
+        f_printf(&fil, "%6.2lf, %6.2lf, %6.2lf, %6.2lf, ", f_accelX, f_accelY, f_accelZ, resultant_accel);
+        sleep_ms(10);
         f_printf(&fil, "%6.2lf, %6.2lf, %6.2lf, ", f_magX, f_magY, f_magZ);
-        f_printf(&fil, "%8.5f, %.2lf, %8.5f, ", gps.target_angle, heading, target_angle);
-        f_printf(&fil, "%d\n", fase);
+        sleep_ms(10);
+        f_printf(&fil, "%8.5f, %.2lf, %8.5f\n", gps.target_angle, heading, target_angle);
+        sleep_ms(10);
         fr = f_close(&fil);
+        sleep_ms(100);
     }
 }
 
+/*
 float calc_target_angle(GPS::Measurement_t gps_value, double heading){
     double goal_vector_x = goal_lon - gps_value.lon;
     double goal_vector_y = goal_lat - gps_value.lat;
-    double magnetic_vector_x = cos(heading * PI / 180.0);
-    double magnetic_vector_y = sin(heading * PI / 180.0);
+    double magnetic_vector_x = magX;
+    double magnetic_vector_y = magY;
     double vector_x = goal_vector_x + magnetic_vector_x;
     double vector_y = goal_vector_y + magnetic_vector_y;
 
@@ -253,10 +368,10 @@ float calc_target_angle(GPS::Measurement_t gps_value, double heading){
     }
 
     double target_angle = RAD_TO_DEG(direction_angle);
-    target_angle += 90;
 
     if(target_angle > 360){
         target_angle -= 360;
     }
     return target_angle;
 }
+*/
