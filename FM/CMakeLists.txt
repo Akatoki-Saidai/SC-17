@@ -20,7 +20,7 @@ add_executable(E2E
             )
 
 #Pull in our pico_stdlib which aggregates commonly used features
-target_link_libraries(E2E pico_stdlib hardware_gpio hardware_i2c hardware_pwm hardware_uart hardware_timer pico_binary_info FatFs_SPI)
+target_link_libraries(E2E pico_stdlib hardware_gpio hardware_i2c hardware_pwm hardware_uart pico_binary_info)
 
 #Enable USB output, disable UART output
 pico_enable_stdio_usb(E2E 1)

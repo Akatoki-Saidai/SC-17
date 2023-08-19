@@ -295,10 +295,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "CXX compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/usr/bin/arm-none-eabi-g++"
 		},
 		{
@@ -423,10 +423,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "C compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/usr/bin/arm-none-eabi-gcc"
 		},
 		{
@@ -1503,7 +1503,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : " /home/n17y17/pico/pico-sdk/src/rp2_common/cmsis /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs"
+			"value" : " /home/n17y17/pico/pico-sdk/src/rp2_common/cmsis /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs /home/n17y17/pico/pico-sdk/src/rp2_common/cmsis /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs"
 		},
 		{
 			"name" : "PICO_DOXYGEN_PATHS",
