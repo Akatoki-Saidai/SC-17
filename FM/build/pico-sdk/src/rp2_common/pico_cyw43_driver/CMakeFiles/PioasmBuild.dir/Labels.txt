@@ -1,0 +1,13 @@
+# Target labels
+ PioasmBuild
+# Source files and their labels
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild.rule
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild-complete.rule
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-build.rule
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure.rule
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-download.rule
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-install.rule
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir.rule
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch.rule
+/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-update.rule

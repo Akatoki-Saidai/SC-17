@@ -7,7 +7,7 @@
 #include "hardware/uart.h"
 #include "hardware/timer.h"
 
-#include "bme280.hpp"
+#include "BME280.hpp"
 
 #include "BNO055.h"
 
@@ -17,10 +17,10 @@
 
 //#include "SendCoordinate.h"
 
-#include "f_util.h"
-#include "ff.h"
-#include "rtc.h"
-#include "hw_config.h"
+// #include "f_util.h"
+// #include "ff.h"
+// #include "rtc.h"
+// #include "hw_config.h"
 
 #define PI 3.14159265359
 #define RAD_TO_DEG(rad) ((rad) * (180.0 / PI))
@@ -44,7 +44,7 @@ float standerd_altitude;
 
 int main(){
     stdio_init_all();
-    time_init();
+    // time_init();
     sleep_ms(1000);
 
     BME280 myBME280(
@@ -95,30 +95,30 @@ int main(){
     bool isTextReceived;
     int coordinate, area;
 
-    unsigned long long int count = 0;
-    sd_card_t *pSD = sd_get_by_num(0);
-    FRESULT fr = f_mount(&pSD->fatfs, pSD->pcName, 1);
-    if (FR_OK != fr) panic("f_mount error: %s (%d)\n", FRESULT_str(fr), fr);
-    FIL fil;
-    const char* const filename = "CanSat_Logdata.txt";
-    fr = f_open(&fil, filename, FA_OPEN_APPEND | FA_WRITE);
-    sleep_ms(100);
-    f_printf(&fil, "date, time, ");
-    sleep_ms(10);
-    f_printf(&fil, "fase, ");
-    sleep_ms(10);
-    f_printf(&fil, "latitude, longitude, distance, ");
-    sleep_ms(10);
-    f_printf(&fil, "temperature, humidity, pressure, altitude, ");
-    sleep_ms(10);
-    f_printf(&fil, "accel_X, accel_Y, accel_Z, resultant_accel");
-    sleep_ms(10);
-    f_printf(&fil, "mag_X, mag_Y, mag_Z, ");
-    f_printf(&fil, "azimuth, derection, target_angle\n");
-    sleep_ms(10);
-    fr = f_close(&fil);
+    // unsigned long long int count = 0;
+    // sd_card_t *pSD = sd_get_by_num(0);
+    // FRESULT fr = f_mount(&pSD->fatfs, pSD->pcName, 1);
+    // if (FR_OK != fr) panic("f_mount error: %s (%d)\n", FRESULT_str(fr), fr);
+    // FIL fil;
+    // const char* const filename = "CanSat_Logdata.txt";
+    // fr = f_open(&fil, filename, FA_OPEN_APPEND | FA_WRITE);
+    // sleep_ms(100);
+    // f_printf(&fil, "date, time, ");
+    // sleep_ms(10);
+    // f_printf(&fil, "fase, ");
+    // sleep_ms(10);
+    // f_printf(&fil, "latitude, longitude, distance, ");
+    // sleep_ms(10);
+    // f_printf(&fil, "temperature, humidity, pressure, altitude, ");
+    // sleep_ms(10);
+    // f_printf(&fil, "accel_X, accel_Y, accel_Z, resultant_accel");
+    // sleep_ms(10);
+    // f_printf(&fil, "mag_X, mag_Y, mag_Z, ");
+    // f_printf(&fil, "azimuth, derection, target_angle\n");
+    // sleep_ms(10);
+    // fr = f_close(&fil);
     //f_unmount(pSD->pcName);
-    bool switch_fase = false;    
+    // bool switch_fase = false;    
 
     sleep_ms(1000);
     startTime = get_absolute_time();
@@ -141,7 +141,7 @@ int main(){
             target_angle -= 360.0;
         }
 
-        if(fase >= 4){
+        if(fase == 4){
             while(gps.lat == -1024){
                 tight_loop_contents();
                 sleep_ms(100);
@@ -149,13 +149,13 @@ int main(){
             }
         }
 
-        switch_fase = false;
+        // switch_fase = false;
         endTime = get_absolute_time();
  
         switch(fase){
             case 1:     //待機フェーズ
                 if(resultant_accel > 20 || absolute_time_diff_us(startTime, endTime) > 6100000000){
-                    switch_fase = true;
+                    // switch_fase = true;
                     fase = 2;
                     sleep_ms(100);
                     break;
@@ -165,7 +165,7 @@ int main(){
 
             case 2:     //落下フェーズ
                 if(fabs(bme.altitude_2 - standerd_altitude) < 10){
-                    switch_fase = true;
+                    // switch_fase = true;
                     fase = 3;
                     sleep_ms(100);
                 }else{
@@ -186,7 +186,7 @@ int main(){
             
             case 4:     //遠距離フェーズ
                 if(gps.target_distance < 5){
-                    switch_fase = true;
+                    // switch_fase = true;
                     fase = 5;
                     //printf("GOAL\n");
                     //gpio_put(25, 1);
@@ -289,14 +289,16 @@ int main(){
                         printf("GOAL\n");
                         gpio_put(25, 1);
 
-                        fr = f_open(&fil, filename, FA_OPEN_APPEND | FA_WRITE);
-                        f_printf(&fil, "%d-%d-%d, ", gps.year, gps.month, gps.day);
-                        sleep_ms(10);
-                        f_printf(&fil, "%d:%d:%d, ", gps.hour, gps.minute, gps.second);
-                        sleep_ms(10);
-                        f_printf(&fil, "GOAL!!\n");
-                        fr = f_close(&fil);
-                        f_unmount(pSD->pcName);
+                        uart_puts(uart1, "GOAL!!");
+
+                        // fr = f_open(&fil, filename, FA_OPEN_APPEND | FA_WRITE);
+                        // f_printf(&fil, "%d-%d-%d, ", gps.year, gps.month, gps.day);
+                        // sleep_ms(10);
+                        // f_printf(&fil, "%d:%d:%d, ", gps.hour, gps.minute, gps.second);
+                        // sleep_ms(10);
+                        // f_printf(&fil, "GOAL!!\n");
+                        // fr = f_close(&fil);
+                        // f_unmount(pSD->pcName);
                         while(true){
                             tight_loop_contents();
                         }
@@ -349,27 +351,31 @@ int main(){
         printf("fase:%d\n", fase); 
         sleep_ms(100);
 
+        char moji[100];
+        sprintf(moji, "%d-%d-%d, %d:%d:%d, %d, %.10f, %.10f, %10.6f, %6.3f, %6.3f, %6.3f, %6.3f, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %8.5f, %.2lf, %8.5f", gps.year, gps.month, gps.day, gps.hour, gps.minute, gps.second, fase, gps.lat, gps.lon, gps.target_distance, bme.temperature, bme.humidity, bme.pressure, bme.altitude_2, f_accelX, f_accelY, f_accelZ, resultant_accel, f_magX, f_magY, f_magZ, gps.target_angle, heading, target_angle);
+        uart_puts(uart1, moji);
+
         //if(switch_fase){
-            f_open(&fil, filename, FA_OPEN_APPEND | FA_WRITE);
-            sleep_ms(10);
-            f_printf(&fil, "%d-%d-%d, ", gps.year, gps.month, gps.day);
-            sleep_ms(10);
-            f_printf(&fil, "%d:%d:%d, ", gps.hour, gps.minute, gps.second);
-            sleep_ms(10);
-            f_printf(&fil, "%d, ", fase);
-            sleep_ms(10);
-            f_printf(&fil, "%.10f, %.10f, %10.6f, ",gps.lat, gps.lon, gps.target_distance );
-            sleep_ms(10);
-            f_printf(&fil, "%6.3f, %6.3f, %6.3f, %6.3f, ", bme.temperature, bme.humidity, bme.pressure, bme.altitude_2);
-            sleep_ms(10);
-            f_printf(&fil, "%6.2lf, %6.2lf, %6.2lf, %6.2lf, ", f_accelX, f_accelY, f_accelZ, resultant_accel);
-            sleep_ms(10);
-            f_printf(&fil, "%6.2lf, %6.2lf, %6.2lf, ", f_magX, f_magY, f_magZ);
-            sleep_ms(10);
-            f_printf(&fil, "%8.5f, %.2lf, %8.5f\n", gps.target_angle, heading, target_angle);
-            sleep_ms(10);
-            f_close(&fil);
-            sleep_ms(100);
+            // f_open(&fil, filename, FA_OPEN_APPEND | FA_WRITE);
+            // sleep_ms(10);
+            // f_printf(&fil, "%d-%d-%d, ", gps.year, gps.month, gps.day);
+            // sleep_ms(10);
+            // f_printf(&fil, "%d:%d:%d, ", gps.hour, gps.minute, gps.second);
+            // sleep_ms(10);
+            // f_printf(&fil, "%d, ", fase);
+            // sleep_ms(10);
+            // f_printf(&fil, "%.10f, %.10f, %10.6f, ",gps.lat, gps.lon, gps.target_distance );
+            // sleep_ms(10);
+            // f_printf(&fil, "%6.3f, %6.3f, %6.3f, %6.3f, ", bme.temperature, bme.humidity, bme.pressure, bme.altitude_2);
+            // sleep_ms(10);
+            // f_printf(&fil, "%6.2lf, %6.2lf, %6.2lf, %6.2lf, ", f_accelX, f_accelY, f_accelZ, resultant_accel);
+            // sleep_ms(10);
+            // f_printf(&fil, "%6.2lf, %6.2lf, %6.2lf, ", f_magX, f_magY, f_magZ);
+            // sleep_ms(10);
+            // f_printf(&fil, "%8.5f, %.2lf, %8.5f\n", gps.target_angle, heading, target_angle);
+            // sleep_ms(10);
+            // f_close(&fil);
+            // sleep_ms(100);
        // }
     }
 }

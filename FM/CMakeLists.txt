@@ -12,14 +12,11 @@ set(CMAKE_CXX_STANDARD 17)
 #Initialize the SDK
 pico_sdk_init()
 
-add_subdirectory(FatFs_SPI build)
-
 #Add an executable target to be build from the source files
 add_executable(E2E 
             E2E.cpp
             GT_902PMGG_irq.cpp
             BME280.cpp
-            hw_config.c
             )
 
 #Pull in our pico_stdlib which aggregates commonly used features
