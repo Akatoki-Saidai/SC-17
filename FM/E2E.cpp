@@ -33,7 +33,7 @@ double goal_lat = 40.1426031670, goal_lon = 139.9876123330; //ゴール座標
 
 float standerd_altitude;
 
-#define BAUD_RATE 9600
+#define BAUD_RATE 115200
 #define DATA_BITS 8
 #define STOP_BITS 1
 #define PARITY UART_PARITY_NONE
@@ -123,6 +123,8 @@ int main(){
     sleep_ms(1000);
     startTime = get_absolute_time();
 
+    int count = 0;
+
     while(true){
         bme = myBME280.measure();
         gps = myGPS.measure();
@@ -141,7 +143,7 @@ int main(){
             target_angle -= 360.0;
         }
 
-        if(fase == 4){
+        if(fase >= 4){
             while(gps.lat == -1024){
                 tight_loop_contents();
                 sleep_ms(100);
@@ -151,11 +153,13 @@ int main(){
 
         // switch_fase = false;
         endTime = get_absolute_time();
+
+        bool switch_fase = false;
  
         switch(fase){
             case 1:     //待機フェーズ
-                if(resultant_accel > 20 || absolute_time_diff_us(startTime, endTime) > 6100000000){
-                    // switch_fase = true;
+                if(resultant_accel > 20 || absolute_time_diff_us(startTime, endTime) > 900000000){
+                    switch_fase = true;
                     fase = 2;
                     sleep_ms(100);
                     break;
@@ -165,7 +169,7 @@ int main(){
 
             case 2:     //落下フェーズ
                 if(fabs(bme.altitude_2 - standerd_altitude) < 10){
-                    // switch_fase = true;
+                    switch_fase = true;
                     fase = 3;
                     sleep_ms(100);
                 }else{
@@ -180,13 +184,13 @@ int main(){
                 sleep_ms(500);
                 forward(0);
                 sleep_ms(1000);
+                switch_fase = true;
                 fase = 4;
                 sleep_ms(100);
                 break;
             
             case 4:     //遠距離フェーズ
                 if(gps.target_distance < 5){
-                    // switch_fase = true;
                     fase = 5;
                     //printf("GOAL\n");
                     //gpio_put(25, 1);
@@ -351,10 +355,27 @@ int main(){
         printf("fase:%d\n", fase); 
         sleep_ms(100);
 
-        char moji[100];
-        sprintf(moji, "%d-%d-%d, %d:%d:%d, %d, %.10f, %.10f, %10.6f, %6.3f, %6.3f, %6.3f, %6.3f, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %8.5f, %.2lf, %8.5f", gps.year, gps.month, gps.day, gps.hour, gps.minute, gps.second, fase, gps.lat, gps.lon, gps.target_distance, bme.temperature, bme.humidity, bme.pressure, bme.altitude_2, f_accelX, f_accelY, f_accelZ, resultant_accel, f_magX, f_magY, f_magZ, gps.target_angle, heading, target_angle);
-        uart_puts(uart1, moji);
+        //char SendText[300];
+        //sprintf(moji, "%d-%d-%d, %d:%d:%d, %d, %.10f, %.10f, %10.6f, %6.3f, %6.3f, %6.3f, %6.3f, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %8.5f, %.2lf, %8.5f", gps.year, gps.month, gps.day, gps.hour, gps.minute, gps.second, fase, gps.lat, gps.lon, gps.target_distance, bme.temperature, bme.humidity, bme.pressure, bme.altitude_2, f_accelX, f_accelY, f_accelZ, resultant_accel, f_magX, f_magY, f_magZ, gps.target_angle, heading, target_angle);
+        //printf("%s\n", moji);
+        //const char *input_str = moji;
+        // size_t text_len = strlen(text);
+        // strncpy(moji, text, sizeof(moji));
+        // moji[sizeof(moji) - 1] = '\0';
+        //uart_puts(uart1, SendText);
+        if((fase == 1 && count % 10 == 0) || fase >= 2 || switch_fase = true){
+            char SendText[300];
+            snprintf(SendText, sizeof(SendText), "%d-%d-%d, %d:%d:%d, %d, %.10f, %.10f, %10.6f, %6.3f, %6.3f, %6.3f, %6.3f, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %6.2lf, %8.5f, %.2lf, %8.5f\0", gps.year, gps.month, gps.day, gps.hour, gps.minute, gps.second, fase, gps.lat, gps.lon, gps.target_distance, bme.temperature, bme.humidity, bme.pressure, bme.altitude_2, f_accelX, f_accelY, f_accelZ, resultant_accel, f_magX, f_magY, f_magZ, gps.target_angle, heading, target_angle);
+            
+            // SendTextをUART1で送信
+            for (int i = 0; SendText[i] != '\0'; i++) {
+                uart_putc(uart1, SendText[i]);
+            }       
 
+            sleep_ms(1000);
+        }
+
+        count++;
         //if(switch_fase){
             // f_open(&fil, filename, FA_OPEN_APPEND | FA_WRITE);
             // sleep_ms(10);

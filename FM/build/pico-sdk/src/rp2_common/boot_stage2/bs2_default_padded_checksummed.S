@@ -1,4 +1,4 @@
-// Padded and checksummed version of: /home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
+// Padded and checksummed version of: C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 .cpu cortex-m0plus
 .thumb

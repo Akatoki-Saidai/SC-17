@@ -1,107 +1,127 @@
-CMakeFiles/E2E.dir/BME280.cpp.obj: \
- /home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/BME280.cpp \
- /home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/BME280.hpp \
- /usr/include/newlib/stdio.h /usr/include/newlib/_ansi.h \
- /usr/include/newlib/newlib.h /usr/include/newlib/_newlib_version.h \
- /usr/include/newlib/sys/config.h /usr/include/newlib/machine/ieeefp.h \
- /usr/include/newlib/sys/features.h /usr/include/newlib/sys/cdefs.h \
- /usr/include/newlib/machine/_default_types.h \
- /usr/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h \
- /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h \
- /usr/include/newlib/sys/reent.h /usr/include/newlib/_ansi.h \
- /usr/include/newlib/sys/_types.h /usr/include/newlib/machine/_types.h \
- /usr/include/newlib/sys/lock.h /usr/include/newlib/sys/types.h \
- /usr/include/newlib/sys/_stdint.h /usr/include/newlib/machine/endian.h \
- /usr/include/newlib/machine/_endian.h /usr/include/newlib/sys/select.h \
- /usr/include/newlib/sys/_sigset.h /usr/include/newlib/sys/_timeval.h \
- /usr/include/newlib/sys/timespec.h /usr/include/newlib/sys/_timespec.h \
- /usr/include/newlib/sys/_pthreadtypes.h /usr/include/newlib/sys/sched.h \
- /usr/include/newlib/machine/types.h /usr/include/newlib/sys/stdio.h \
- /usr/include/newlib/string.h /usr/include/newlib/sys/_locale.h \
- /usr/include/newlib/strings.h /usr/include/newlib/sys/string.h \
- /usr/include/newlib/c++/10.3.1/math.h \
- /usr/include/newlib/c++/10.3.1/cmath \
- /usr/include/newlib/c++/10.3.1/arm-none-eabi/thumb/v6-m/nofp/bits/c++config.h \
- /usr/include/newlib/c++/10.3.1/arm-none-eabi/thumb/v6-m/nofp/bits/os_defines.h \
- /usr/include/newlib/c++/10.3.1/arm-none-eabi/thumb/v6-m/nofp/bits/cpu_defines.h \
- /usr/include/newlib/c++/10.3.1/pstl/pstl_config.h \
- /usr/include/newlib/c++/10.3.1/bits/cpp_type_traits.h \
- /usr/include/newlib/c++/10.3.1/ext/type_traits.h \
- /usr/include/newlib/math.h /usr/include/newlib/c++/10.3.1/bits/std_abs.h \
- /usr/include/newlib/c++/10.3.1/stdlib.h /usr/include/newlib/stdlib.h \
- /usr/include/newlib/machine/stdlib.h /usr/include/newlib/alloca.h \
- /usr/include/newlib/c++/10.3.1/bits/specfun.h \
- /usr/include/newlib/c++/10.3.1/bits/stl_algobase.h \
- /usr/include/newlib/c++/10.3.1/bits/functexcept.h \
- /usr/include/newlib/c++/10.3.1/bits/exception_defines.h \
- /usr/include/newlib/c++/10.3.1/ext/numeric_traits.h \
- /usr/include/newlib/c++/10.3.1/bits/stl_pair.h \
- /usr/include/newlib/c++/10.3.1/bits/move.h \
- /usr/include/newlib/c++/10.3.1/type_traits \
- /usr/include/newlib/c++/10.3.1/bits/stl_iterator_base_types.h \
- /usr/include/newlib/c++/10.3.1/bits/stl_iterator_base_funcs.h \
- /usr/include/newlib/c++/10.3.1/bits/concept_check.h \
- /usr/include/newlib/c++/10.3.1/debug/assertions.h \
- /usr/include/newlib/c++/10.3.1/bits/stl_iterator.h \
- /usr/include/newlib/c++/10.3.1/bits/ptr_traits.h \
- /usr/include/newlib/c++/10.3.1/debug/debug.h \
- /usr/include/newlib/c++/10.3.1/bits/predefined_ops.h \
- /usr/include/newlib/c++/10.3.1/limits \
- /usr/include/newlib/c++/10.3.1/tr1/gamma.tcc \
- /usr/include/newlib/c++/10.3.1/tr1/special_function_util.h \
- /usr/include/newlib/c++/10.3.1/tr1/bessel_function.tcc \
- /usr/include/newlib/c++/10.3.1/tr1/beta_function.tcc \
- /usr/include/newlib/c++/10.3.1/tr1/ell_integral.tcc \
- /usr/include/newlib/c++/10.3.1/tr1/exp_integral.tcc \
- /usr/include/newlib/c++/10.3.1/tr1/hypergeometric.tcc \
- /usr/include/newlib/c++/10.3.1/tr1/legendre_function.tcc \
- /usr/include/newlib/c++/10.3.1/tr1/modified_bessel_func.tcc \
- /usr/include/newlib/c++/10.3.1/tr1/poly_hermite.tcc \
- /usr/include/newlib/c++/10.3.1/tr1/poly_laguerre.tcc \
- /usr/include/newlib/c++/10.3.1/tr1/riemann_zeta.tcc \
- /home/n17y17/pico/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
- /home/n17y17/pico/pico-sdk/src/common/pico_base/include/pico.h \
- /home/n17y17/pico/pico-sdk/src/common/pico_base/include/pico/types.h \
- /home/n17y17/pico/pico-sdk/src/common/pico_base/include/pico/assert.h \
- /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h \
- /usr/include/newlib/c++/10.3.1/cassert /usr/include/newlib/assert.h \
- /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
- /home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/generated/pico_base/pico/version.h \
- /home/n17y17/pico/pico-sdk/src/common/pico_base/include/pico/config.h \
- /home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/generated/pico_base/pico/config_autogen.h \
- /home/n17y17/pico/pico-sdk/src/boards/include/boards/pico.h \
- /home/n17y17/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
- /home/n17y17/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
- /home/n17y17/pico/pico-sdk/src/common/pico_base/include/pico/types.h \
- /home/n17y17/pico/pico-sdk/src/common/pico_base/include/pico/error.h \
- /home/n17y17/pico/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
- /home/n17y17/pico/pico-sdk/src/common/pico_time/include/pico/time.h \
- /home/n17y17/pico/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
- /home/n17y17/pico/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
- /home/n17y17/pico/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/iobank0.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
- /home/n17y17/pico/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
- /home/n17y17/pico/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
- /home/n17y17/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
- /home/n17y17/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h \
- /home/n17y17/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
- /home/n17y17/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
- /home/n17y17/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h \
- /home/n17y17/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h \
- /home/n17y17/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h
+CMakeFiles\E2E.dir\BME280.cpp.obj: \
+ C:\Users\SHINGUCHI\ HIROTAKA\Documents\GitHub\SC-17\FM\BME280.cpp \
+ C:\Users\SHINGUCHI\ HIROTAKA\Documents\GitHub\SC-17\FM\BME280.hpp \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\stdio.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\_ansi.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\newlib.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\_newlib_version.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\config.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\machine\ieeefp.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\features.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\cdefs.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\machine\_default_types.h \
+ c:\progra~2\gnuarm~1\102021~1.10\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h \
+ c:\progra~2\gnuarm~1\102021~1.10\lib\gcc\arm-none-eabi\10.3.1\include\stdarg.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\reent.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\_ansi.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\_types.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\machine\_types.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\lock.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\types.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\_stdint.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\machine\endian.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\machine\_endian.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\select.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\_sigset.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\_timeval.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\timespec.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\_timespec.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\_pthreadtypes.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\sched.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\machine\types.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\stdio.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\string.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\_locale.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\strings.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\string.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\math.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\cmath \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\arm-none-eabi\thumb\v6-m\nofp\bits\c++config.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\arm-none-eabi\thumb\v6-m\nofp\bits\os_defines.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\arm-none-eabi\thumb\v6-m\nofp\bits\cpu_defines.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\pstl\pstl_config.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\cpp_type_traits.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\ext\type_traits.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\math.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\std_abs.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\stdlib.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\machine\stdlib.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\alloca.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\specfun.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\stl_algobase.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\functexcept.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\exception_defines.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\ext\numeric_traits.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\stl_pair.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\move.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\type_traits \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\stl_iterator_base_types.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\stl_iterator_base_funcs.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\concept_check.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\debug\assertions.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\stl_iterator.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\ptr_traits.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\debug\debug.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\bits\predefined_ops.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\limits \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\tr1\gamma.tcc \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\tr1\special_function_util.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\tr1\bessel_function.tcc \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\tr1\beta_function.tcc \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\tr1\ell_integral.tcc \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\tr1\exp_integral.tcc \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\tr1\hypergeometric.tcc \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\tr1\legendre_function.tcc \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\tr1\modified_bessel_func.tcc \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\tr1\poly_hermite.tcc \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\tr1\poly_laguerre.tcc \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\tr1\riemann_zeta.tcc \
+ C:\Pico\pico-sdk\src\common\pico_stdlib\include/pico/stdlib.h \
+ C:\Pico\pico-sdk\src\common\pico_base\include/pico.h \
+ C:\Pico\pico-sdk\src\common\pico_base\include/pico/types.h \
+ C:\Pico\pico-sdk\src\common\pico_base\include/pico/assert.h \
+ c:\progra~2\gnuarm~1\102021~1.10\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\c++\10.3.1\cassert \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\assert.h \
+ c:\progra~2\gnuarm~1\102021~1.10\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\stdint.h \
+ c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\_intsup.h \
+ C:\Users\SHINGU~1\DOCUME~1\GitHub\SC-17\FM\build\GENERA~1\PICO_B~1/pico/version.h \
+ C:\Pico\pico-sdk\src\common\pico_base\include/pico/config.h \
+ C:\Users\SHINGU~1\DOCUME~1\GitHub\SC-17\FM\build\GENERA~1\PICO_B~1/pico/config_autogen.h \
+ C:/Pico/pico-sdk/src/boards/include/boards/pico.h \
+ C:/Pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+ C:\Pico\pico-sdk\src\rp2_common\pico_platform\include/pico/platform.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/platform_defs.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/addressmap.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/sio.h \
+ C:\Pico\pico-sdk\src\common\pico_base\include/pico/types.h \
+ C:\Pico\pico-sdk\src\common\pico_base\include/pico/error.h \
+ C:\Pico\pico-sdk\src\rp2_common\pico_stdio\include/pico/stdio.h \
+ C:\Pico\pico-sdk\src\common\pico_time\include/pico/time.h \
+ C:\Pico\pico-sdk\src\rp2_common\hardware_timer\include/hardware/timer.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/timer.h \
+ C:\Pico\pico-sdk\src\rp2_common\hardware_base\include/hardware/address_mapped.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/timer.h \
+ C:\Pico\pico-sdk\src\rp2_common\hardware_gpio\include/hardware/gpio.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/sio.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/interp.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/padsbank0.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/pads_bank0.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/iobank0.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/io_bank0.h \
+ C:\Pico\pico-sdk\src\rp2_common\hardware_irq\include/hardware/irq.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/intctrl.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/m0plus.h \
+ C:\Pico\pico-sdk\src\rp2_common\hardware_uart\include/hardware/uart.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/uart.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/uart.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/dreq.h \
+ C:\Pico\pico-sdk\src\rp2_common\pico_stdio_usb\include/pico/stdio_usb.h \
+ C:\Pico\pico-sdk\src\common\pico_binary_info\include/pico/binary_info.h \
+ C:\Pico\pico-sdk\src\common\pico_binary_info\include/pico/binary_info/defs.h \
+ C:\Pico\pico-sdk\src\common\pico_binary_info\include/pico/binary_info/structure.h \
+ C:\Pico\pico-sdk\src\common\pico_binary_info\include/pico/binary_info/code.h \
+ C:\Pico\pico-sdk\src\rp2_common\hardware_i2c\include/hardware/i2c.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/i2c.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/i2c.h

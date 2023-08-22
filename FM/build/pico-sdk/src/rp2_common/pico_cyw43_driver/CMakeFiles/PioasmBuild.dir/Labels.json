@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild"
+			"file" : "C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild"
 		},
 		{
-			"file" : "/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild.rule"
+			"file" : "C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild.rule"
 		},
 		{
-			"file" : "/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild-complete.rule"
+			"file" : "C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild-complete.rule"
 		},
 		{
-			"file" : "/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-build.rule"
+			"file" : "C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-build.rule"
 		},
 		{
-			"file" : "/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure.rule"
+			"file" : "C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure.rule"
 		},
 		{
-			"file" : "/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-download.rule"
+			"file" : "C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-download.rule"
 		},
 		{
-			"file" : "/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-install.rule"
+			"file" : "C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-install.rule"
 		},
 		{
-			"file" : "/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir.rule"
+			"file" : "C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir.rule"
 		},
 		{
-			"file" : "/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch.rule"
+			"file" : "C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch.rule"
 		},
 		{
-			"file" : "/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-update.rule"
+			"file" : "C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-update.rule"
 		}
 	],
 	"target" : 

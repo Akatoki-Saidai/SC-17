@@ -1,8 +1,8 @@
-# Install script for directory: /home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM
+# Install script for directory: C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/E2E")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/arm-none-eabi-objdump")
+  set(CMAKE_OBJDUMP "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/pico-sdk/cmake_install.cmake")
+  include("C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM/build/pico-sdk/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/n17y17/program/Akatoki/sc17/Akatoki-Saidai/SC-17/FM/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/SHINGUCHI HIROTAKA/Documents/GitHub/SC-17/FM/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
